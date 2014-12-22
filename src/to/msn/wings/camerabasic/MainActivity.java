@@ -1,5 +1,7 @@
 package to.msn.wings.camerabasic;
 
+import to.msn.wings.camerabasic.CameraActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ public class MainActivity extends Activity {
       setContentView(R.layout.activity_main);
       
       
+
       bt1 = (Button)findViewById(R.id.button1);
       bt1.setOnClickListener(new SampleClickListener());
       bt2 = (Button)findViewById(R.id.button2);
@@ -29,9 +32,9 @@ public class MainActivity extends Activity {
     class SampleClickListener implements OnClickListener{
     	public void onClick(View v){
     		if(v == bt1){
-        	Intent i = new Intent(getApplication(), to.msn.wings.camerabasic.CameraActivity.class);
-        	//アクティビティの開始
-        	startActivity(i);
+    			Intent i = new Intent(getApplication(), to.msn.wings.camerabasic.CameraActivity.class);
+    			//アクティビティの開始
+    			startActivity(i);
     		}
     		if(v == bt2){
             	Intent i = new Intent(getApplication(), to.msn.wings.camerabasic.GalleryActivity.class);
@@ -40,7 +43,9 @@ public class MainActivity extends Activity {
         	}
     	}
     }
+
     
+   
 
    
 }
