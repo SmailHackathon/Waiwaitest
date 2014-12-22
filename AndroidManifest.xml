@@ -4,7 +4,7 @@
   android:versionName="1.0" >
 
   <uses-sdk
-    android:minSdkVersion="10"
+    android:minSdkVersion="13"
     android:targetSdkVersion="15" />
 
   <uses-permission android:name="android.permission.CAMERA" />
@@ -25,8 +25,15 @@
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
+      <intent-filter> 
+          <action android:name="android.intent.action.VIEW"/> 
+          <category android:name="android.intent.category.DEFAULT"/> 
+          <data android:mimeType="image/png" /> 
+      </intent-filter>
+      
     </activity>
     <activity android:name=".CameraActivity"></activity>
+    <activity android:name=".GalleryActivity"></activity>
 
 
   </application>
