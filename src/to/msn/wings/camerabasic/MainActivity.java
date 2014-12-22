@@ -1,5 +1,7 @@
 package to.msn.wings.camerabasic;
 
+import to.msn.wings.camerabasic.CameraActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,19 +22,19 @@ public class MainActivity extends Activity {
       setContentView(R.layout.activity_main);
       
       
-      bt = (Button)findViewById(R.id.button);
-      bt.setOnClickListener(new SampleClickListener());
+    bt = (Button)findViewById(R.id.button);
+    bt.setOnClickListener(new OnClickListener(){
+						public void onClick(View v) {
+									startCameraActivity();
+						}
+    					});
     }
     
-    class SampleClickListener implements OnClickListener{
-    	public void onClick(View v){
-    		if(v == bt){
-        	Intent i = new Intent(getApplication(), to.msn.wings.camerabasic.CameraActivity.class);
-        	//アクティビティの開始
-        	startActivity(i);
-    		}
-    	}
-    }
+    private void startCameraActivity(){
+    	System.out.println("Fuuuuuuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!1");
+		Intent intent = new Intent(this,CameraActivity.class);
+		startActivityForResult(intent,0);
+	}
     
 
    
